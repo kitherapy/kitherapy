@@ -21,7 +21,7 @@
   --bone:      #FBFAF7;   /* UI ground */
   --sand:      #E6E0D5;   /* clay — dividers, placeholder surfaces */
   --sand-lt:   #EFEDE8;   /* page ground */
-  --stone:     #6E7780;   /* muted text */
+  --stone:     #57616B;   /* muted text — dark enough to stay readable at small sizes */
   --white:     #FFFFFF;
 
   /* Type — Marcellus is the wordmark face only, never body copy */
@@ -47,7 +47,7 @@ body {
   color: var(--pine);
   font-family: var(--sans);
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -64,7 +64,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Type primitives ---------- */
 h1, h2, h3 {
   font-family: var(--serif);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.12;
   letter-spacing: .005em;
   margin: 0;
@@ -215,7 +215,7 @@ p  { margin: 0 0 1.1em; }
 }
 .hero__lede {
   font-size: clamp(1.05rem, 1.75vw, 1.28rem);
-  color: rgba(246,242,234,.8); line-height: 1.85;
+  color: rgba(246,242,234,.92); line-height: 1.85;
   max-width: 53ch; margin-block: 2rem 2.8rem;
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -227,7 +227,7 @@ p  { margin: 0 0 1.1em; }
 }
 .hero__meta div {
   font-size: .74rem; letter-spacing: .13em; text-transform: uppercase;
-  color: rgba(246,242,234,.68); display: flex; align-items: center; gap: .6rem;
+  color: rgba(246,242,234,.82); display: flex; align-items: center; gap: .6rem;
 }
 .hero__meta svg { width: 15px; height: 15px; flex: none; stroke: var(--gold); }
 
@@ -260,7 +260,7 @@ p  { margin: 0 0 1.1em; }
 }
 .trust dd {
   margin: 0; font-size: .66rem; letter-spacing: .19em;
-  text-transform: uppercase; color: rgba(246,242,234,.62);
+  text-transform: uppercase; color: rgba(246,242,234,.78);
 }
 
 /* ---------- Section heading ---------- */
@@ -317,7 +317,7 @@ p  { margin: 0 0 1.1em; }
 .ritual__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5.5rem); align-items: center; }
 .ritual h2 { color: var(--bone); }
 .ritual h2 em { font-style: italic; color: var(--gold-lt); }
-.ritual p { color: rgba(246,242,234,.74); }
+.ritual p { color: rgba(246,242,234,.86); }
 .ritual .eyebrow { color: var(--gold-lt); }
 
 .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
@@ -334,7 +334,7 @@ p  { margin: 0 0 1.1em; }
   line-height: 1;
 }
 .steps h3 { font-size: 1.2rem; color: var(--bone); margin-bottom: .3rem; font-family: var(--sans); font-weight: 400; letter-spacing: .02em; }
-.steps p { font-size: .93rem; margin: 0; color: rgba(246,242,234,.62); }
+.steps p { font-size: .93rem; margin: 0; color: rgba(246,242,234,.76); }
 
 /* ---------- Service area ---------- */
 .zones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
@@ -393,10 +393,10 @@ p  { margin: 0 0 1.1em; }
 .member > * { position: relative; z-index: 2; }
 .member h3 { color: var(--bone); font-size: clamp(1.7rem, 3vw, 2.3rem); }
 .member .eyebrow { color: var(--gold-lt); }
-.member p { color: rgba(246,242,234,.74); font-size: .97rem; }
+.member p { color: rgba(246,242,234,.86); font-size: .97rem; }
 .member ul { list-style: none; margin: 1.4rem 0 0; padding: 0; }
 .member ul li {
-  font-size: .92rem; color: rgba(246,242,234,.8);
+  font-size: .92rem; color: rgba(246,242,234,.9);
   padding: .5rem 0 .5rem 1.7rem; position: relative;
 }
 .member ul li::before {
@@ -476,7 +476,7 @@ p  { margin: 0 0 1.1em; }
 .corp__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .corp h2 { color: var(--bone); }
 .corp h2 em { font-style: italic; color: var(--gold-lt); }
-.corp p { color: rgba(246,242,234,.74); }
+.corp p { color: rgba(246,242,234,.86); }
 .corp .eyebrow { color: var(--gold-lt); }
 .corp__uses { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .corp__use {
@@ -486,7 +486,7 @@ p  { margin: 0 0 1.1em; }
 .corp__use:hover { border-color: var(--gold); background: rgba(192,162,101,.06); }
 .corp__use svg { width: 26px; height: 26px; stroke: var(--gold); stroke-width: 1.2; fill: none; margin-bottom: .9rem; }
 .corp__use h3 { font-family: var(--sans); font-size: .97rem; font-weight: 400; color: var(--bone); margin-bottom: .3rem; letter-spacing: .02em; }
-.corp__use p { font-size: .84rem; margin: 0; color: rgba(246,242,234,.58); }
+.corp__use p { font-size: .84rem; margin: 0; color: rgba(246,242,234,.74); }
 
 /* ---------- FAQ ---------- */
 .faq { max-width: 860px; margin-inline: auto; }
@@ -528,12 +528,12 @@ p  { margin: 0 0 1.1em; }
 .cta .wrap { position: relative; z-index: 2; }
 .cta h2 { color: var(--bone); }
 .cta h2 em { font-style: italic; color: var(--gold-lt); }
-.cta p { color: rgba(246,242,234,.74); max-width: 52ch; margin-inline: auto; }
+.cta p { color: rgba(246,242,234,.88); max-width: 52ch; margin-inline: auto; }
 .cta__btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2.4rem; }
 .cta__mark { width: 68px; margin: 0 auto 2rem; opacity: .85; }
 
 /* ---------- Footer ---------- */
-.ftr { background: var(--pine-dk); color: rgba(246,242,234,.62); padding-block: 4.5rem 2rem; font-size: .89rem; }
+.ftr { background: var(--pine-dk); color: rgba(246,242,234,.76); padding-block: 4.5rem 2rem; font-size: .89rem; }
 .ftr__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 2.5rem; }
 .ftr h4 {
   font-family: var(--sans); font-size: .66rem; font-weight: 400;
