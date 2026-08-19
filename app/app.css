@@ -1,0 +1,397 @@
+/* ============================================================
+   K.I THERAPY — App screens
+   Implements turn 2 of the branding exploration: the Solid Seal (1b)
+   identity carried into the booking flow.
+
+   System rules being followed:
+     · Slate is full-bleed only at the top of a screen, or a primary button
+     · Brass is reserved for ONE thing per screen
+     · Body UI sits on bone, with clay dividers
+     · Headings are Cormorant; everything functional is tracked Jost
+   ============================================================ */
+
+@import url('../brand/tokens.css');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bone-warm);
+  font-family: var(--f-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Gallery chrome ---------- */
+.gallery { padding: 44px 48px 64px; }
+.gallery__head { margin-bottom: 34px; max-width: 720px; }
+.gallery__head h1 {
+  margin: 0 0 10px;
+  font: 300 30px/1.15 var(--f-display);
+  color: var(--slate);
+}
+.gallery__head p {
+  margin: 0;
+  font: 300 12.5px/1.65 var(--f-ui);
+  color: var(--slate-62);
+}
+.gallery__rail {
+  display: flex; gap: 34px; align-items: flex-start;
+  overflow-x: auto; padding-bottom: 20px;
+}
+.screen-slot { flex: none; display: flex; flex-direction: column; gap: 11px; }
+.screen-slot__label {
+  display: flex; align-items: baseline; gap: 9px;
+  font: 300 11.5px/1.3 var(--f-ui); color: var(--slate-62);
+}
+.screen-slot__id {
+  font: 500 10.5px ui-monospace, Menlo, monospace;
+  padding: 3px 7px; background: var(--slate-10); color: var(--slate);
+  border-radius: 5px; letter-spacing: .05em;
+}
+
+/* ============================================================
+   iOS device frame
+   402 × 874, r48 — matches ios-frame.jsx
+   ============================================================ */
+.ios {
+  width: 402px; height: 874px;
+  border-radius: 48px; overflow: hidden;
+  position: relative;
+  background: var(--bone);
+  box-shadow: 0 40px 80px rgba(0,0,0,.18), 0 0 0 1px rgba(0,0,0,.12);
+  display: flex; flex-direction: column;
+}
+.ios--dark { background: #000; }
+
+/* Dynamic island */
+.ios__island {
+  position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+  width: 126px; height: 37px; border-radius: 24px;
+  background: #000; z-index: 50;
+}
+
+/* Status bar */
+.ios__status {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center;
+  padding: 21px 24px 19px;
+  pointer-events: none;
+}
+.ios__time {
+  flex: 1; text-align: center; padding-left: 8px;
+  font: 590 17px/22px -apple-system, 'SF Pro', system-ui;
+  color: #000;
+}
+.ios__glyphs {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  gap: 7px; padding-right: 1px;
+}
+.ios--dark .ios__time { color: #fff; }
+
+/* Home indicator */
+.ios__home {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 60;
+  height: 34px; display: flex; justify-content: center; align-items: flex-end;
+  padding-bottom: 8px; pointer-events: none;
+}
+.ios__home i {
+  width: 139px; height: 5px; border-radius: 100px;
+  background: rgba(0,0,0,.25);
+}
+.ios--dark .ios__home i { background: rgba(255,255,255,.7); }
+
+/* Screen body */
+.scr {
+  height: 100%; display: flex; flex-direction: column;
+  overflow: hidden; background: var(--bone);
+}
+.scr--dark { background: var(--slate); }
+
+/* ============================================================
+   Shared screen primitives
+   ============================================================ */
+
+/* Tracked Jost label — the workhorse of this system */
+.lbl {
+  font: 300 8.5px/1 var(--f-ui);
+  letter-spacing: var(--track-lg);
+  color: var(--slate-45);
+}
+.lbl--brass { color: var(--brass); }
+.lbl--onslate { color: var(--bone-50); }
+
+.hdg { font-family: var(--f-display); font-weight: 300; color: var(--slate); }
+
+.divider { height: 1px; background: var(--slate-10); }
+
+/* Primary action — slate, per rule 1 */
+.btn-primary {
+  background: var(--slate); border-radius: var(--r-md);
+  padding: 15px 30px;
+  font: 400 11px/1 var(--f-ui); letter-spacing: var(--track-md);
+  color: var(--bone-text); text-align: center;
+}
+.btn-brass {
+  background: var(--brass-lt); border-radius: var(--r-md);
+  padding: 16px; text-align: center;
+  font: 400 11px/1 var(--f-ui); letter-spacing: var(--track-md);
+  color: var(--slate);
+}
+
+/* Placeholder imagery — hatched clay, clearly not real photography.
+   `.hatch` is background only, so containers can own their own layout;
+   `.ph-img` adds the centred caption treatment for thumbnails. */
+.hatch {
+  background: repeating-linear-gradient(135deg, var(--clay) 0 6px, #DED7CA 6px 12px);
+}
+.ph-img {
+  background: repeating-linear-gradient(135deg, var(--clay) 0 6px, #DED7CA 6px 12px);
+  display: flex; align-items: center; justify-content: center;
+  font: 300 8px ui-monospace, monospace; letter-spacing: .1em;
+  color: var(--slate-45);
+}
+
+/* ============================================================
+   01 — Home
+   ============================================================ */
+.home__hero {
+  background: var(--slate);
+  padding: 66px 24px 30px;
+  display: flex; flex-direction: column; gap: 26px;
+}
+.home__bar { display: flex; align-items: center; justify-content: space-between; }
+.home__brand { display: flex; align-items: center; gap: 10px; }
+.home__brand span {
+  font: 500 12px/1 var(--f-ui); letter-spacing: var(--track-md);
+  color: var(--bone-text);
+}
+.home__avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--bone-30);
+  display: flex; align-items: center; justify-content: center;
+  font: 300 11px var(--f-ui); letter-spacing: .06em; color: var(--bone-text);
+}
+.home__date {
+  font: 300 9px/1 var(--f-ui); letter-spacing: var(--track-xl); color: var(--brass);
+}
+.home__greeting {
+  font: 300 32px/1.15 var(--f-display); color: var(--bone-text); text-wrap: pretty;
+}
+
+/* En-route card, lifted over the hero seam */
+.home__track-wrap { padding: 0 20px; margin-top: -18px; }
+.home__track {
+  background: var(--bone); border: 1px solid var(--slate-10);
+  border-radius: var(--r-lg); padding: 16px 18px;
+  display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 6px 20px rgba(30,42,51,.07);
+}
+.home__track-av { width: 44px; height: 44px; border-radius: 50%; background: var(--clay); flex: none; }
+.home__track-txt { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.home__track-txt b { font: 400 14px/1.2 var(--f-ui); color: var(--slate); }
+.home__track-txt small { font: 300 11px/1.2 var(--f-ui); color: var(--slate-55); }
+.home__track-cta {
+  font: 300 9px/1 var(--f-ui); letter-spacing: var(--track-sm); color: var(--brass);
+}
+
+.home__body { padding: 28px 20px 0; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.home__sec-head { display: flex; align-items: baseline; justify-content: space-between; }
+.home__sec-head .more {
+  font: 300 9px/1 var(--f-ui); letter-spacing: var(--track-sm); color: var(--brass);
+}
+.home__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.svc-card { border-radius: 5px; overflow: hidden; border: 1px solid var(--slate-10); }
+.svc-card .ph-img { height: 96px; }
+.svc-card__meta { padding: 11px 12px; background: #fff; }
+.svc-card__meta b { display: block; font: 400 13px/1.2 var(--f-ui); color: var(--slate); }
+.svc-card__meta small { display: block; font: 300 11px/1.2 var(--f-ui); color: var(--slate-55); margin-top: 3px; }
+
+/* Membership — the one brass moment on this screen */
+.home__member {
+  margin-top: 6px;
+  border: 1px solid var(--brass-40); background: var(--brass-07);
+  border-radius: 5px; padding: 15px 16px;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.home__member p { margin: 0; font: 300 19px/1.25 var(--f-display); color: var(--slate); }
+
+/* Tab bar */
+.tabbar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--slate-10);
+  background: var(--bone); padding: 14px 12px 30px;
+}
+.tab { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.tab i { width: 16px; height: 1.5px; background: transparent; }
+.tab span {
+  font: 300 8.5px/1 var(--f-ui); letter-spacing: var(--track-xs);
+  color: rgba(30,42,51,.4);
+}
+.tab--on i { background: var(--slate); }
+.tab--on span { font-weight: 400; color: var(--slate); }
+
+/* ============================================================
+   02 — Treatment
+   ============================================================ */
+.trt__hero {
+  height: 300px; position: relative; flex: none;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  padding: 22px;
+  background: repeating-linear-gradient(135deg, var(--clay) 0 7px, #DED7CA 7px 14px);
+}
+.trt__back {
+  position: absolute; top: 62px; left: 20px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(251,250,247,.9);
+  display: flex; align-items: center; justify-content: center;
+  font: 300 14px var(--f-ui); color: var(--slate);
+}
+.trt__hero-note {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font: 300 8px ui-monospace, monospace; letter-spacing: .1em; color: rgba(30,42,51,.4);
+}
+.trt__tag {
+  font: 300 8.5px/1 var(--f-ui); letter-spacing: var(--track-lg); color: var(--slate);
+  background: rgba(251,250,247,.9); padding: 7px 11px; border-radius: var(--r-sm);
+}
+.trt__body { padding: 26px 22px 0; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.trt__title { font: 300 34px/1.1 var(--f-display); color: var(--slate); }
+.trt__desc { font: 300 13px/1.6 var(--f-ui); color: var(--slate-62); text-wrap: pretty; }
+
+.dur { display: flex; gap: 9px; }
+.dur__opt {
+  flex: 1; border: 1px solid var(--slate-14); border-radius: var(--r-md);
+  padding: 12px 10px; text-align: center;
+}
+.dur__opt b { font: 400 15px/1 var(--f-ui); color: var(--slate); }
+.dur__opt b span { font-size: 10px; letter-spacing: .1em; }
+.dur__opt small { display: block; font: 300 11px/1 var(--f-ui); color: var(--slate-55); margin-top: 6px; }
+.dur__opt--on { border: 1.5px solid var(--slate); background: var(--slate); }
+.dur__opt--on b { color: var(--bone-text); }
+.dur__opt--on small { color: var(--brass-lt); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip {
+  font: 300 11px/1 var(--f-ui); color: var(--slate-70);
+  border: 1px solid var(--slate-14); border-radius: var(--r-pill);
+  padding: 8px 13px;
+}
+
+.trt__foot {
+  padding: 16px 22px 34px; border-top: 1px solid var(--slate-10);
+  background: var(--bone); display: flex; align-items: center; gap: 14px;
+}
+.trt__foot-price { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.trt__foot-price small { font: 300 9px/1 var(--f-ui); letter-spacing: var(--track-md); color: var(--slate-45); }
+.trt__foot-price b { font: 400 17px/1 var(--f-ui); color: var(--slate); }
+
+/* ============================================================
+   03 — Scheduling
+   ============================================================ */
+.sch__head {
+  padding: 62px 22px 18px; display: flex; align-items: center; gap: 14px;
+  border-bottom: 1px solid var(--slate-10);
+}
+.sch__head .back { font: 300 15px var(--f-ui); color: var(--slate); }
+.sch__head .title { font: 400 11px/1 var(--f-ui); letter-spacing: var(--track-md); color: var(--slate); }
+.sch__head .step {
+  margin-left: auto; font: 300 10px/1 var(--f-ui);
+  letter-spacing: var(--track-sm); color: rgba(30,42,51,.4);
+}
+.sch__body { padding: 24px 22px 0; display: flex; flex-direction: column; gap: 22px; flex: 1; }
+.sch__block { display: flex; flex-direction: column; gap: 12px; }
+
+.days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.day {
+  border: 1px solid var(--slate-14); border-radius: var(--r-md);
+  padding: 11px 0; text-align: center;
+}
+.day small { font: 300 9px/1 var(--f-ui); letter-spacing: .14em; color: var(--slate-45); }
+.day b { display: block; font: 400 17px/1 var(--f-ui); color: var(--slate); margin-top: 7px; }
+.day--on { border: 1.5px solid var(--slate); background: var(--slate); }
+.day--on small { color: var(--brass-lt); }
+.day--on b { color: var(--bone-text); }
+.day--off { opacity: .35; }
+
+.times { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.time {
+  border: 1px solid var(--slate-14); border-radius: var(--r-md);
+  padding: 12px 0; text-align: center;
+  font: 300 13px/1 var(--f-ui); color: var(--slate);
+}
+.time--gone { color: var(--slate-30); text-decoration: line-through; }
+/* The one brass moment on this screen: the chosen arrival */
+.time--on {
+  border: 1.5px solid var(--brass); background: var(--brass-10);
+  font-weight: 400;
+}
+
+.addr {
+  border: 1px solid var(--slate-14); border-radius: var(--r-md);
+  padding: 14px 15px; display: flex; align-items: center; gap: 12px;
+}
+.addr i { width: 8px; height: 8px; border-radius: 50%; background: var(--brass); flex: none; }
+.addr div { flex: 1; }
+.addr b { display: block; font: 400 13px/1.2 var(--f-ui); color: var(--slate); }
+.addr small { display: block; font: 300 11px/1.2 var(--f-ui); color: var(--slate-55); margin-top: 3px; }
+.addr .edit { font: 300 9px/1 var(--f-ui); letter-spacing: .22em; color: var(--brass); }
+
+.thera { display: flex; gap: 9px; }
+.thera__opt {
+  flex: 1; border: 1px solid var(--slate-14); border-radius: var(--r-md);
+  padding: 12px; display: flex; align-items: center; gap: 10px;
+}
+.thera__opt--on { border: 1.5px solid var(--slate); }
+.thera__opt .av { width: 30px; height: 30px; border-radius: 50%; background: var(--clay); flex: none; }
+.thera__opt .av--any { background: none; border: 1px dashed var(--slate-30); }
+.thera__opt b { display: block; font: 400 12px/1.1 var(--f-ui); color: var(--slate); }
+.thera__opt small { display: block; font: 300 10px/1.1 var(--f-ui); color: var(--slate-55); margin-top: 2px; }
+
+.sch__foot {
+  padding: 16px 22px 34px; border-top: 1px solid var(--slate-10);
+  display: flex; align-items: center; gap: 14px;
+}
+.sch__foot p { flex: 1; margin: 0; font: 300 11px/1.4 var(--f-ui); color: var(--slate-55); }
+
+/* ============================================================
+   04 — Confirmed (the seal moment)
+   ============================================================ */
+.cfm {
+  background: var(--slate); display: flex; flex-direction: column;
+  align-items: center; padding: 96px 26px 40px; height: 100%;
+}
+.cfm__eyebrow {
+  margin-top: 30px; font: 300 9px/1 var(--f-ui);
+  letter-spacing: var(--track-xl); color: var(--brass-lt);
+}
+.cfm__when {
+  margin-top: 16px; font: 300 30px/1.25 var(--f-display);
+  color: var(--bone-text); text-align: center; text-wrap: pretty;
+}
+.cfm__sheet {
+  margin-top: 34px; width: 100%;
+  border-top: 1px solid var(--bone-14); border-bottom: 1px solid var(--bone-14);
+  padding: 20px 0; display: flex; flex-direction: column; gap: 14px;
+}
+.cfm__row { display: flex; justify-content: space-between; }
+.cfm__row dt {
+  font: 300 11px var(--f-ui); letter-spacing: var(--track-xs); color: var(--bone-50);
+}
+.cfm__row dd { margin: 0; font: 300 13px var(--f-ui); color: var(--bone-text); }
+.cfm__row--total dd { font-weight: 400; color: var(--brass-lt); }
+.cfm__note {
+  margin-top: 22px; font: 300 12px/1.65 var(--f-ui);
+  color: var(--bone-55); text-align: center; text-wrap: pretty;
+}
+.cfm__actions { margin-top: auto; width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.cfm__ghost {
+  padding: 14px; text-align: center;
+  font: 300 10px/1 var(--f-ui); letter-spacing: var(--track-sm); color: var(--bone-50);
+}
+
+/* ---------- Small screens: let the frames scale down ---------- */
+@media (max-width: 900px) {
+  .gallery { padding: 28px 20px 48px; }
+  .gallery__rail { gap: 24px; }
+  .ios { transform: scale(.82); transform-origin: top left; margin-right: -72px; margin-bottom: -157px; }
+}

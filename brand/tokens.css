@@ -1,0 +1,69 @@
+/* ============================================================
+   K.I THERAPY — Design tokens
+   Source of truth: "KI Therapy branding exploration" (Claude Design)
+   Shared system, turn 1 — slate / brass / clay / bone
+   ============================================================ */
+
+:root {
+  /* ---- Core palette ---- */
+  --slate:      #1E2A33;   /* brand ground */
+  --brass:      #A98455;   /* accent — on light */
+  --brass-lt:   #C9A87C;   /* accent — on slate */
+  --clay:       #E6E0D5;   /* dividers, placeholder surfaces */
+  --bone:       #FBFAF7;   /* UI ground */
+  --bone-warm:  #EFEDE8;   /* page ground */
+  --bone-text:  #F3EFE8;   /* text/marks reversed on slate */
+
+  /* ---- Derived (kept as tokens so nothing hardcodes an alpha) ---- */
+  --slate-90:   rgba(30, 42, 51, .90);
+  --slate-70:   rgba(30, 42, 51, .70);
+  --slate-62:   rgba(30, 42, 51, .62);
+  --slate-55:   rgba(30, 42, 51, .55);
+  --slate-45:   rgba(30, 42, 51, .45);
+  --slate-30:   rgba(30, 42, 51, .30);
+  --slate-14:   rgba(30, 42, 51, .14);
+  --slate-10:   rgba(30, 42, 51, .10);
+  --slate-06:   rgba(30, 42, 51, .06);
+
+  --bone-70:    rgba(243, 239, 232, .70);
+  --bone-55:    rgba(243, 239, 232, .55);
+  --bone-50:    rgba(243, 239, 232, .50);
+  --bone-30:    rgba(243, 239, 232, .30);
+  --bone-14:    rgba(243, 239, 232, .14);
+
+  --brass-40:   rgba(169, 132, 85, .40);
+  --brass-10:   rgba(169, 132, 85, .10);
+  --brass-07:   rgba(169, 132, 85, .07);
+
+  /* ---- Type ---- */
+  --f-wordmark: 'Marcellus', Georgia, 'Times New Roman', serif;
+  --f-display:  'Cormorant Garamond', Cormorant, Garamond, Georgia, serif;
+  --f-ui:       'Jost', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* ---- Tracking scale (the system leans hard on letterspacing) ---- */
+  --track-xs:   .16em;
+  --track-sm:   .20em;
+  --track-md:   .26em;
+  --track-lg:   .34em;
+  --track-xl:   .42em;
+
+  /* ---- Radii — the doc uses small, restrained corners ---- */
+  --r-sm: 3px;
+  --r-md: 4px;
+  --r-lg: 6px;
+  --r-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* ============================================================
+   System rules, transcribed from the doc's own notes (turn 2):
+
+   1. Slate is the brand ground. It appears full-bleed only at the
+      top of a screen, or on a primary button.
+   2. Brass is reserved for ONE thing per screen.
+   3. Body UI sits on bone, with clay dividers.
+   4. Headings are Cormorant. Everything functional is tracked Jost.
+   5. Marcellus is the wordmark face only — never body copy.
+   ============================================================ */

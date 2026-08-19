@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="K.I Therapy figure">
+  <!-- Figure alone, no disc. Uses currentColor so one file serves every ground. -->
+  <circle cx="100" cy="66" r="14" fill="currentColor"/>
+  <path d="M100 86 C 78 86 60 106 50 142 Q 100 124 150 142 C 140 106 122 86 100 86 Z" fill="currentColor"/>
+  <path d="M42 148 Q 100 180 158 148 Q 100 162 42 148 Z" fill="currentColor"/>
+</svg>

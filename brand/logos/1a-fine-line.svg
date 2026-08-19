@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300" role="img" aria-label="K.I Therapy — Fine Line">
+  <rect width="420" height="300" fill="#FBFAF7"/>
+  <!-- Mark: halo opens at the shoulders so figure + circle share one silhouette -->
+  <g transform="translate(135 34) scale(0.75)">
+    <g fill="none" stroke="#1E2A33" stroke-width="2.4" stroke-linecap="round">
+      <path d="M41.2 126 A 66 66 0 1 1 158.8 126"/>
+      <path d="M58 150 L 84 106 Q 100 98 116 106 L 142 150"/>
+      <path d="M100 86 L 100 101"/>
+      <path d="M62 156 Q 100 178 138 156"/>
+    </g>
+    <circle cx="100" cy="74" r="10.5" fill="#1E2A33"/>
+    <!-- the small cross, kept as a quiet wellness cue -->
+    <g stroke="#A98455" stroke-width="2.4" stroke-linecap="round">
+      <path d="M56 54 L 56 70"/>
+      <path d="M48 62 L 64 62"/>
+    </g>
+  </g>
+
+  <text x="210" y="212" text-anchor="middle"
+        font-family="Marcellus, Georgia, 'Times New Roman', serif"
+        font-size="30" font-weight="400" letter-spacing="4.8" fill="#1E2A33">K.I THERAPY</text>
+  <line x1="184" y1="230" x2="236" y2="230" stroke="#A98455" stroke-width="1"/>
+  <text x="210" y="253" text-anchor="middle"
+        font-family="Jost, 'Avenir Next', Helvetica, Arial, sans-serif"
+        font-size="9.5" font-weight="300" letter-spacing="3.99" fill="rgba(30,42,51,.55)">MOBILE MASSAGE &amp; TRAINING</text>
+</svg>

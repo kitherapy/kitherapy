@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300" role="img" aria-label="K.I Therapy — Brass on Slate">
+  <rect width="420" height="300" fill="#1E2A33"/>
+  <!-- Mark: figure reduced to three gestures, hairline brass ring -->
+  <g transform="translate(135 30) scale(0.75)">
+    <circle cx="100" cy="100" r="82" fill="none" stroke="#A98455" stroke-width="1.1"/>
+    <g fill="none" stroke="#C9A87C" stroke-width="1.8" stroke-linecap="round">
+      <path d="M58 150 L 84 106 Q 100 98 116 106 L 142 150"/>
+      <path d="M100 86 L 100 101"/>
+      <path d="M62 156 Q 100 178 138 156"/>
+    </g>
+    <circle cx="100" cy="74" r="10" fill="#C9A87C"/>
+  </g>
+
+  <text x="210" y="214" text-anchor="middle"
+        font-family="'Cormorant Garamond', Cormorant, Garamond, Georgia, serif"
+        font-size="40" font-weight="300" letter-spacing="4" fill="#F3EFE8">K.I Therapy</text>
+
+  <line x1="96"  y1="240" x2="116" y2="240" stroke="rgba(201,168,124,.6)" stroke-width="1"/>
+  <text x="210" y="243" text-anchor="middle"
+        font-family="Jost, 'Avenir Next', Helvetica, Arial, sans-serif"
+        font-size="8.5" font-weight="300" letter-spacing="3.74" fill="#C9A87C">AT HOME, BY APPOINTMENT</text>
+  <line x1="304" y1="240" x2="324" y2="240" stroke="rgba(201,168,124,.6)" stroke-width="1"/>
+</svg>
