@@ -5,6 +5,7 @@
     { "source": "/booking", "destination": "https://www.fresha.com/book-now/k-i-therapy-ruhr8p8t/all-offer?share=true&pId=3074027", "permanent": false },
     { "source": "/reservar", "destination": "https://www.fresha.com/book-now/k-i-therapy-ruhr8p8t/all-offer?share=true&pId=3074027", "permanent": false },
     { "source": "/whatsapp", "destination": "https://wa.me/447871141090?text=Hi%20Kem%2C%20I%20found%20K.I%20Therapy%20online%20and%20would%20love%20to%20book%20a%20session.%20Could%20you%20let%20me%20know%20your%20availability%3F", "permanent": false },
+    { "source": "/review", "destination": "https://g.page/r/CcSAQUBPJ6YfEBI/review", "permanent": false },
     { "source": "/thanks", "destination": "/thank-you/", "permanent": false },
     { "source": "/gracias", "destination": "/thank-you/", "permanent": false }
   ]

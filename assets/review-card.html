@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>K.I Therapy — Review Card (print A6)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { size: A6 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    display: grid; place-items: center;
+    background: #EFEDE8; font-family: Jost, sans-serif;
+  }
+  .card {
+    width: 105mm; height: 148mm;
+    background: #1E2A33;
+    color: #F3EFE8;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    padding: 12mm 10mm 10mm;
+  }
+  .seal { width: 18mm; height: 18mm; margin-bottom: 6mm; }
+  .eyebrow {
+    font-size: 7pt; letter-spacing: .34em; text-transform: uppercase;
+    color: #C9A87C; margin-bottom: 4mm;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: 22pt; line-height: 1.2; margin-bottom: 3mm;
+  }
+  h1 em { font-style: italic; color: #C9A87C; }
+  p.sub {
+    font-size: 8.5pt; line-height: 1.65; color: rgba(243,239,232,.75);
+    max-width: 70mm; margin-bottom: 6mm;
+  }
+  .qrbox {
+    background: #FBFAF7; border-radius: 2mm; padding: 4mm;
+    line-height: 0;
+  }
+  .qrbox img {
+    width: 34mm; height: 34mm;
+    image-rendering: pixelated;
+  }
+  .url {
+    margin-top: 5mm; font-size: 10.5pt; font-weight: 500;
+    letter-spacing: .12em; color: #C9A87C;
+  }
+  .foot {
+    margin-top: auto; font-size: 6.5pt; letter-spacing: .26em;
+    text-transform: uppercase; color: rgba(243,239,232,.5);
+  }
+  @media print { body { background: none; } }
+</style>
+</head>
+<body>
+<div class="card">
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="87" fill="none" stroke="rgba(201,168,124,.4)" stroke-width="2"/>
+    <circle cx="100" cy="66" r="14" fill="#C9A87C"/>
+    <path d="M100 86 C 78 86 60 106 50 142 Q 100 124 150 142 C 140 106 122 86 100 86 Z" fill="#C9A87C"/>
+    <path d="M42 148 Q 100 180 158 148 Q 100 162 42 148 Z" fill="#C9A87C"/>
+  </svg>
+
+  <div class="eyebrow">K.I Therapy</div>
+  <h1>How was<br><em>your session?</em></h1>
+  <p class="sub">We're a new practice, earning our name one honest review at a time.
+     If today deserved one, it would mean the world.</p>
+
+  <div class="qrbox"><img src="review-qr.png" alt="QR code to leave a Google review"></div>
+  <div class="url">kitherapy.fit/review</div>
+
+  <div class="foot">Wellness · Massage · Training</div>
+</div>
+</body>
+</html>
